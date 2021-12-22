@@ -17,5 +17,10 @@ namespace BlogApp.Repositories
         {
             return _db.Posts.ToList();
         }
+
+        public List<Post> Last5postList()
+        {
+            return _db.Posts.OrderByDescending(s => s.Id).Take(5).ToList();
+        }
     }
 }

@@ -11,6 +11,10 @@ namespace BlogApp.Controllers
 {
     public class HomeController : Controller
     {
+        //db tanımlama
+
+        ApplicationDbContext _db = new ApplicationDbContext();
+
         private readonly ILogger<HomeController> _logger;
 
         public HomeController(ILogger<HomeController> logger)
@@ -33,5 +37,14 @@ namespace BlogApp.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+
+        //Tıklanan posta yönlendirme yapan fonksiyon view componentten
+        public IActionResult GetPostsbyid(int ? id)
+        {
+            List<Post> posts = _db.Posts.Where(x => x.Id == id).ToList();
+            return View(posts); 
+        }
+
     }
 }
