@@ -1,31 +1,33 @@
-﻿<!DOCTYPE html>
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
 <html lang="en">
 
-<div>
-    <head>
+<head>
 
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="">
-        <meta name="author" content="">
-        <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
-        <link href="~/css/site.css" rel="stylesheet" />
-        <title>Stand Blog Posts</title>
-        <link href="~/standartBlog/templatemo_551_stand_blog/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-        <!-- Bootstrap core CSS -->
-        <!-- Additional CSS Files -->
-        <link href="~/standartBlog/templatemo_551_stand_blog/assets/css/fontawesome.css" rel="stylesheet" />
-        <link href="~/standartBlog/templatemo_551_stand_blog/assets/css/templatemo-stand-blog.css" rel="stylesheet" />
-        <link href="~/standartBlog/templatemo_551_stand_blog/assets/css/owl.css" rel="stylesheet" />
-        <!--
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
+    <link href="~/css/site.css" rel="stylesheet" />
+    <title>Stand Blog Posts</title>
+    <link href="~/standartBlog/templatemo_551_stand_blog/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Bootstrap core CSS -->
+    <!-- Additional CSS Files -->
+    <link href="~/standartBlog/templatemo_551_stand_blog/assets/css/fontawesome.css" rel="stylesheet" />
+    <link href="~/standartBlog/templatemo_551_stand_blog/assets/css/templatemo-stand-blog.css" rel="stylesheet" />
+    <link href="~/standartBlog/templatemo_551_stand_blog/assets/css/owl.css" rel="stylesheet" />
+    <!--
 
-        TemplateMo 551 Stand Blog
+    TemplateMo 551 Stand Blog
 
-        https://templatemo.com/tm-551-stand-blog
+    https://templatemo.com/tm-551-stand-blog
 
-        -->
-    </head>
-</div>
+    -->
+</head>
 
 <body>
 
@@ -48,15 +50,12 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
+                        @*<li class="nav-item">
                             <a class="nav-link" href="index.html">
                                 Home
                                 <span class="sr-only">(current)</span>
                             </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="about.html">About Us</a>
-                        </li>
+                        </li>*@
                         <li class="nav-item active">
                             <a class="nav-link" href="blog.html">Blog Entries</a>
                         </li>
@@ -71,12 +70,13 @@
             </div>
         </nav>
     </header>
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
-   
+
 
     <footer>
         <div class="container">
