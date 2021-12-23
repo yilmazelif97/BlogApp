@@ -39,12 +39,6 @@ namespace BlogApp.Controllers
         }
 
 
-        //Tıklanan posta yönlendirme yapan fonksiyon view componentten
-        public IActionResult GetPostsbyid(int ? id)
-        {
-            List<Post> posts = _db.Posts.Where(x => x.Id == id).ToList();
-            return View(posts); 
-        }
-
+        
     }
 }

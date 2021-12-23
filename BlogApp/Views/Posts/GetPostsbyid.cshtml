@@ -4,5 +4,10 @@
 @{
 }
 
+@model List<Post>
 
-@*BURDA GÖDNERİLEN POSTUN BİLGİLERİ GÖSTERİLECEK*@
+
+@foreach( var item in Model)
+{
+    <h3> @item.Content </h3>
+}
