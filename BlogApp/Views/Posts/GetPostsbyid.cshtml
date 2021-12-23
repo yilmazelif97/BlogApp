@@ -1,13 +1,45 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿
+@using BlogApp.Models
+@model ViewModel
+
 @{
+
+    ViewData["Title"] = "GetPostsbyid";
 }
 
-@model List<Post>
+
+<div style="padding-top: 250px;">
+
+    @foreach (var item in Model.posts)
+    {
+
+        <h1>@item.Content</h1>
+        <h1>@item.PublishDate</h1>
 
 
-@foreach( var item in Model)
-{
-    <h3> @item.Content </h3>
-}
+
+    }
+
+    
+</div>
+
+<div>
+
+
+    <h1>@Model.comments.Count</h1>
+
+    @foreach(var item2 in Model.comments)
+            {
+
+        <h2>@item2.CommentName</h2>
+        <h3>@item2.Content</h3>
+            }
+
+ 
+
+
+
+
+</div>
+
+

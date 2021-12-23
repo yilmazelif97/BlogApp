@@ -18,9 +18,18 @@ namespace BlogApp.Repositories
             return _db.Posts.ToList();
         }
 
-        public List<Post> Last5postList()
+        public List<Post> Last3postList()
         {
-            return _db.Posts.OrderByDescending(s => s.Id).Take(5).ToList();
+            return _db.Posts.OrderByDescending(s => s.Id).Take(3).ToList();
         }
+
+
+
+        public Post Findbyid(int id)
+        {
+            return _db.Posts.Find(id);
+        }
+
+        
     }
 }
