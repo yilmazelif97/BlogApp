@@ -20,6 +20,16 @@
                 }
 
 
-            </ul>
+</ul>
+
+<div>
+    @using(Html.BeginForm("SearchPost","Posts", FormMethod.Post))
+    {
+        <input type="text" name="text" placeholder="Bir değer giriniz">
+        <input type="submit" value="Ara" />
+    }
+</div>
+
+
 
 

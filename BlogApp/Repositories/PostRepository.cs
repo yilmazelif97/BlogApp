@@ -24,12 +24,30 @@ namespace BlogApp.Repositories
         }
 
 
+        public List<Category> ListCategories()
+        {
+            return _db.Categories.ToList();
+        }
+
 
         public Post Findbyid(int id)
         {
             return _db.Posts.Find(id);
         }
 
-        
+        public void AddComment(Comment comment)
+        {
+             _db.Comments.Add(comment);
+            _db.SaveChanges();
+        }
+
+        public Category FindCategory(int id)
+        {
+            return _db.Categories.Find(id);
+        }
+
+
+
+
     }
 }

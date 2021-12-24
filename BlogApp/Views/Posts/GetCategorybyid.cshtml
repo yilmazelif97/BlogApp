@@ -1,0 +1,18 @@
+﻿@using BlogApp.Models
+
+@model List<Post>
+
+@{
+
+    ViewData["Title"] = "GetCategorybyid";
+}
+
+
+<div style="padding-top: 250px;">
+
+  @foreach(var item in Model)
+            {
+                <h2> @item.Category </h2> <span> <a a href="~/Posts/GetPostsbyid/@item.Id"> @item.Content </a> </span>
+            }
+
+</div>

@@ -4,14 +4,16 @@ using BlogApp.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BlogApp.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211224144735_djdf")]
+    partial class djdf
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -50,15 +52,12 @@ namespace BlogApp.Migrations
                     b.Property<DateTime>("PublishDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("ikincipostid")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("postId")
+                    b.Property<int>("postid")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("postId");
+                    b.HasIndex("postid");
 
                     b.ToTable("Comments");
                 });
@@ -154,7 +153,9 @@ namespace BlogApp.Migrations
                 {
                     b.HasOne("BlogApp.Models.Post", "post")
                         .WithMany("Comments")
-                        .HasForeignKey("postId");
+                        .HasForeignKey("postid")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("post");
                 });

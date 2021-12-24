@@ -28,8 +28,7 @@
 
     <h1>@Model.comments.Count</h1>
 
-    @foreach(var item2 in Model.comments)
-            {
+    @foreach(var item2 in Model.comments){
 
         <h2>@item2.CommentName</h2>
         <h3>@item2.Content</h3>
@@ -39,6 +38,20 @@
 
 
 
+
+</div>
+
+<div>
+
+    <h3>Yorum yaz!</h3>
+
+    @using(Html.BeginForm("CreateComment", "Posts", FormMethod.Post)){
+        <input type="text" name="commentname" />
+        <textarea name="contentofcomment" rows="5">  </textarea>
+
+
+        <button type="submit"> Yorumu kaydet </button>
+     }
 
 </div>
 
